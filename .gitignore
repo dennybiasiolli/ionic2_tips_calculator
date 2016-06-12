@@ -1,0 +1,32 @@
+# ionic
+node_modules/
+www/build/
+platforms/
+plugins/
+typings/
+
+npm-debug.log
+
+# Platform iOS
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+platforms/ios/build
+
+# Platform Android
+platforms/android/build.xml
+platforms/android/local.properties
+platforms/android/gradlew
+platforms/android/gradlew.bat
+platforms/android/gradle
+
+# Ant builds
+platforms/android/ant-build
+platforms/android/ant-gen
+
+# Eclipse builds
+platforms/android/gen
+platforms/android/out
+
+# Gradle builds
+platforms/android/build

@@ -1,0 +1,48 @@
+<ion-navbar *navbar>
+    <ion-title>Home</ion-title>
+</ion-navbar>
+
+<ion-content padding class="page1">
+    <h2>New York tips calculator</h2>
+    <div>
+        <label>Base price</label>
+        <input [(ngModel)]="expense.base" placeholder="Base price">
+    </div>
+    <div>
+        <label>VAT %</label>
+        <input [(ngModel)]="expense.vatPercent" placeholder="VAT %">
+        <label>VAT</label>
+        {{expense.vat() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Subtotal</label>
+        {{expense.subtotal() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Tip 15%</label>
+        {{expense.tip15() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Total (tip 15%)</label>
+        {{expense.total15() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Tip 18%</label>
+        {{expense.tip18() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Total (tip 18%)</label>
+        {{expense.total18() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Tip 20%</label>
+        {{expense.tip20() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Total (tip 20%)</label>
+        {{expense.total20() | currency:'USD':'$'}}
+    </div>
+    <p>
+        <button (click)="goToFactsPage()">Scientific Facts</button>
+    </p>
+</ion-content>
