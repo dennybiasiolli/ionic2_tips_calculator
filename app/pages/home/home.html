@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            New York tips calculator
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col width-50>
+                <ion-item>
+                    <ion-label floating>Base price</ion-label>
+                    <ion-input type="number" [ngModel]="expense.base" (ngModelChange)="onBaseChange($event)"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col width-50>
+                <ion-item>
+                    <ion-label floating>VAT %</ion-label>
+                    <ion-input type="number" [(ngModel)]="expense.vatPercent"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-50>
+                <ion-item>
+                    <ion-label floating>Subtotal</ion-label>
+                    <ion-input type="number" [ngModel]="expense.subtotal" (ngModelChange)="onSubtotalChange($event)"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col width-50>
+                <ion-item>
+                    <ion-label floating>VAT</ion-label>
+                    <ion-input type="text" value="{{expense.getVat() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-33>
+                <ion-item>
+                    <ion-label floating>Tip 20%</ion-label>
+                    <ion-input type="text" value="{{expense.tip20() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col width-33>
+                <ion-item>
+                    <ion-label floating>Tip 18%</ion-label>
+                    <ion-input type="text" value="{{expense.tip18() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col width-33>
+                <ion-item>
+                    <ion-label floating>Tip 15%</ion-label>
+                    <ion-input type="text" value="{{expense.tip15() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-33>
+                <ion-item>
+                    <ion-label floating>Total (20%)</ion-label>
+                    <ion-input type="text" value="{{expense.total20() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col width-33>
+                <ion-item>
+                    <ion-label floating>Total (18%)</ion-label>
+                    <ion-input type="text" value="{{expense.total18() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col width-33>
+                <ion-item>
+                    <ion-label floating>Total (15%)</ion-label>
+                    <ion-input type="text" value="{{expense.total15() | currency:'USD':'$'}}" readonly></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row wrap>
+            <ion-col>
+                <h5>AL BAR / COFFEE SHOP</h5>
+                <p>Per il bar (intendo il classico bar americano – dove si servono alcolici) l’usanza è di lasciare un dollaro al barista per ogni ordinazione al bar.</p>
+                <p>Diverso invece il discorso nei Coffee Shop. Se consumiamo seduti e serviti dal cameriere vale la regola del ristorante (15-20%), mentre se prendiamo un caffè da passeggio non serve lasciare nulla, non abbiamo ricevuto alcun “servizio”.</p>
+            </ion-col>
+        </ion-row>
+        <ion-row wrap>
+            <ion-col>
+                <h5>IN TAXI</h5>
+                <p>In genere per una corsa normale (spostamenti brevi all’interno della città), va bene lasciare un paio di dollari. $2 – $3 vanno più che bene.</p>
+                <p>Si tende invece a lasciare fino a $5 per spostamenti più lunghi, tipo i trasferimenti dall’aeroporto a Manhattan e viceversa.</p>
+            </ion-col>
+        </ion-row>
+        <ion-row wrap>
+            <ion-col>
+                <h5>IN HOTEL</h5>
+                <p>Non c’è una regola ben precisa, dipende molto dall’hotel, se è una catena, dal livello qualitativo del servizio. Per non sbagliare considerate di lasciare un $2 per il facchinaggio ed eventuale servizio in camera.</p>
+                <p>Se allogiate in un hotel e avete una cameriera personale (magari avete anche servizio di mezza pensione o pensione completa), facile che vi troviate in camera una busta dove lasciare le mance del giorno – senza darle direttamente in mano
+                    per questioni di etichetta – busta che sarà ritirata quotidianamente dalla cameriera stessa quando vi rifà la camera.</p>
+                <p>Al personale delle pulizie, se vi capita di richiederne il servizio, lasciate 1/2 dollaro.</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<!-- <div>
+        <label>Tip 18%</label>
+        {{expense.tip18() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Total (tip 18%)</label>
+        {{expense.total18() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Tip 20%</label>
+        {{expense.tip20() | currency:'USD':'$'}}
+    </div>
+    <div>
+        <label>Total (tip 20%)</label>
+        {{expense.total20() | currency:'USD':'$'}}
+    </div> -->
